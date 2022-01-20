@@ -1,0 +1,78 @@
+main {
+  width: 900px;
+  margin: 0 auto;
+  overflow:hidden;
+  height: 900px;
+}
+
+header {
+  background-color: green;
+  width: 100%;
+}
+
+h1 {
+  width: 400px;
+  position: relative;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.8em;
+  line-height: 2.4em;
+  margin-left: auto;
+}
+
+.mode-edit,
+.mode-maker,
+.mode-blockly {
+  display: none;
+}
+
+[mode="maker"] .mode-maker,
+[mode="edit"] .mode-edit,
+[mode="blockly"] .mode-blockly {
+  display: block;
+}
+
+.blockly-editor {
+  margin-top: 50px;
+  top: 64px;
+  left: -400px;
+  transition: left .4s;
+  height: 460px;
+  width: 400px;
+  background-color: #eee;
+}
+
+[mode="blockly"] .blockly-editor {
+  left: 0;
+  height: 960px;
+  width: 700px;
+}
+
+.maker {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 60px;
+  width: 400px;
+  margin-top: 80px;
+}
+
+.maker > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 20px;
+  height: 40px;
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 140px;
+}
+
+.mdl-button {
+  margin: 1em 0;
+  float: right;
+}

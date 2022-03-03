@@ -1,8 +1,8 @@
 main {
-  width: 900px;
+  width: 1400px;
   margin: 0 auto;
   overflow:hidden;
-  height: 900px;
+  height: auto;
 }
 
 header {
@@ -35,17 +35,16 @@ h1 {
 .blockly-editor {
   margin-top: 50px;
   top: 64px;
-  left: -400px;
   transition: left .4s;
-  height: 460px;
-  width: 400px;
-  background-color: #eee;
+  height: 280px;
+  width:  100%;
+  background-color: rgb(255, 255, 255);
 }
 
 [mode="blockly"] .blockly-editor {
   left: 0;
-  height: 960px;
-  width: 700px;
+  height: 280px;
+  width: 100%;
 }
 
 .maker {
@@ -75,4 +74,23 @@ h1 {
 .mdl-button {
   margin: 1em 0;
   float: right;
+}
+
+.btn-2{
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  width: 100px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color:rgb(88, 180, 184); 
+  margin-top:10px;
+}
+
+.code_space{
+  margin-top: 40px;
+   height: 200px; 
+   width: 1250px; 
+   background-color: rgb(219, 254, 255);
+   overflow:auto;
+   padding: 20px;
 }

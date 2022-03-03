@@ -8,15 +8,14 @@
   let currentButton;
 
   function handlePlay(event) {
-    console.log('handleplay')
     loadWorkspace(event.target);
     let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
-    console.log(code)
-    
+    let finalCode = code.split(' mycodestartHere')
+    document.getElementById('código_aqui').innerText= finalCode[1]
+     
   }
 
   function loadWorkspace(button) {
-    console.log('loadwordspace')
     const workspace = Blockly.getMainWorkspace();
     if (button.blocklySave) {
       Blockly.serialization.workspaces.load(button.blocklySave, workspace);
@@ -24,19 +23,17 @@
   }
 
   function save(button) {
-    console.log('function save')
     button.blocklySave = Blockly.serialization.workspaces.save(
         Blockly.getMainWorkspace());
   }
 
   function handleSave() {
-    console.log('handlesave')
     document.body.setAttribute('mode', 'edit');
     save(currentButton);
   }
 
   function enableEditMode() {
-    console.log('enableeditmode')
+    
     document.body.setAttribute('mode', 'edit');
     document.querySelectorAll('.button').forEach(btn => {
       btn.removeEventListener('click', handlePlay);
@@ -45,7 +42,7 @@
   }
 
   function enableMakerMode() {
-    console.log('enablemarkermode')
+    
     document.body.setAttribute('mode', 'maker');
     document.querySelectorAll('.button').forEach(btn => {
       btn.addEventListener('click', handlePlay);
@@ -54,11 +51,9 @@
   }
 
  
- 
   document.querySelector('#save').addEventListener('click', handlePlay);
 
   function enableBlocklyMode(e) {
-    console.log('enablaBlocklyMode')
     document.body.setAttribute('mode', 'blockly');
     currentButton = e.target;
     loadWorkspace(currentButton);
@@ -70,27 +65,73 @@
 
  
   const toolbox = {
-    'kind': 'flyoutToolbox',
-    'contents': [
-       {
-        'kind': 'block',
-        'type': 'setup',
-      }, {
-        'kind': 'block',
-        'type': 'input',
-      }, {
-        'kind': 'block',
-        'type': 'teste',
-      },
-      {
-        'kind': 'block',
-        'type': 'text',
-      }
-    ],
+      "kind": "categoryToolbox",
+      "contents": [
+        {
+          "kind": "category",
+          "name": "Control",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "controls_if"
+            },
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Logic",
+          "colour": "315",
+          "contents": [
+            {
+              "kind": "block",
+              "type": "logic_compare"
+            },
+            {
+              "kind": "block",
+              "type": "logic_operation"
+            },
+            {
+              "kind": "block",
+              "type": "logic_boolean"
+            }
+          ]
+        },
+        {
+          "kind": "category",
+          "name": "Sketch",
+          "colour": "215",
+          "contents": [
+            {
+              'kind': 'block',
+              'type': 'setupdefinitionsdois',
+            }, {
+              'kind': 'block',
+              'type': 'setupinitlabel',
+            }, {
+              'kind': 'block',
+              'type': 'loopandsetup',
+            }, 
+            
+          ]
+        }, {
+          "kind": "category",
+          "name": "Variables",
+          "custom": "VARIABLE"
+        }
+      ]
+    
+   
   };
+
+
+
+
+
+
+  
 
   Blockly.inject('blocklyDiv', {
     toolbox: toolbox,
-    scrollbars: true,
+    scrollbars: false,
   });
 })();

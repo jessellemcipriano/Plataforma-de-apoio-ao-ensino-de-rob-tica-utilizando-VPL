@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Blockly for the Web Codelab</title>
+  <title>Blockly Arduino - TCC</title>
 
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
   <link rel="stylesheet" href="styles/index.css">
@@ -17,24 +18,32 @@
   </header>
 
   <main>
- 
-    <button class=" mdl-button mdl-js-button" id="save">Gerar código</button>
     
 
+   
     <div class="blockly-editor">
-      <div id="blocklyDiv" style="height: 480px; width: 880px;"></div>
-      <xml id="toolbox" >
-
+      <div id="blocklyDiv" style="height: 280px; width: 1250px;"></div>
+      <xml id="toolbox">
       </xml>
     </div>
+    <button class="btn-2"  id="save">Gerar código</button>
+ 
+
+    <div class="code_space" >
+      <code id = "código_aqui">
+        oi
+      </code>
+    </div>
+   
   </main>
+  
   <button class="mode-blockly mdl-button mdl-js-button" id="save">Voltar</button>
 
 
   <script src="https://unpkg.com/blockly"></script>
-  <script src="scripts/music_maker.js"></script>
-  <script src="scripts/blocks.js"></script>
+  <script src="scripts/setupBlocks.js"></script>
   <script src="scripts/main.js"></script>
 
 </body>
+
 </html>

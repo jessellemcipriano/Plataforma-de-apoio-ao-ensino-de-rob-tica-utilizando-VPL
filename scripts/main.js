@@ -3,7 +3,7 @@
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
- (function() {
+(function () {
 
   let currentButton;
 
@@ -11,8 +11,8 @@
     loadWorkspace(event.target);
     let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     let finalCode = code.split(' mycodestartHere')
-    document.getElementById('código_aqui').innerText= finalCode[1]
-     
+    document.getElementById('código_aqui').innerHTML = finalCode[1]
+
   }
 
   function loadWorkspace(button) {
@@ -24,7 +24,7 @@
 
   function save(button) {
     button.blocklySave = Blockly.serialization.workspaces.save(
-        Blockly.getMainWorkspace());
+      Blockly.getMainWorkspace());
   }
 
   function handleSave() {
@@ -33,7 +33,7 @@
   }
 
   function enableEditMode() {
-    
+
     document.body.setAttribute('mode', 'edit');
     document.querySelectorAll('.button').forEach(btn => {
       btn.removeEventListener('click', handlePlay);
@@ -42,7 +42,7 @@
   }
 
   function enableMakerMode() {
-    
+
     document.body.setAttribute('mode', 'maker');
     document.querySelectorAll('.button').forEach(btn => {
       btn.addEventListener('click', handlePlay);
@@ -50,7 +50,7 @@
     });
   }
 
- 
+
   document.querySelector('#save').addEventListener('click', handlePlay);
 
   function enableBlocklyMode(e) {
@@ -60,67 +60,86 @@
   }
 
 
-  
+
   enableEditMode();
 
- 
+
   const toolbox = {
-      "kind": "categoryToolbox",
-      "contents": [
-        {
-          "kind": "category",
-          "name": "Control",
-          "contents": [
-            {
-              "kind": "block",
-              "type": "controls_if"
-            },
-          ]
-        },
-        {
-          "kind": "category",
-          "name": "Logic",
-          "colour": "315",
-          "contents": [
-            {
-              "kind": "block",
-              "type": "logic_compare"
-            },
-            {
-              "kind": "block",
-              "type": "logic_operation"
-            },
-            {
-              "kind": "block",
-              "type": "logic_boolean"
-            }
-          ]
-        },
-        {
-          "kind": "category",
-          "name": "Sketch",
-          "colour": "215",
-          "contents": [
-            {
-              'kind': 'block',
-              'type': 'setupdefinitionsdois',
-            }, {
-              'kind': 'block',
-              'type': 'setupinitlabel',
-            }, {
-              'kind': 'block',
-              'type': 'loopandsetup',
-            }, 
-            
-          ]
-        }, {
-          "kind": "category",
-          "name": "Variables",
-          "custom": "VARIABLE"
-        }
-      ]
-    
-   
+    "kind": "categoryToolbox",
+    "contents": [
+      {
+        "kind": "category",
+        "name": "Setup",
+        "colour": "180",
+        "contents": [
+          {
+            'kind': 'block',
+            'type': 'setupdefinitionsdois',
+          }, {
+            'kind': 'block',
+            'type': 'setupinitlabel',
+          },
+
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Loop",
+        "colour": 180,
+        "contents": [
+          {
+            "kind": "block",
+            "type": "looplabel"
+          },
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Condicionais",
+        "colour": "105",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "logic_digital_condition"
+          },
+          
+        ]
+      },
+      {
+        "kind": "category",
+        "name": "Variables",
+        "custom": "VARIABLE",
+        "colour": 330,
+      },
+
+      {
+        "kind": "category",
+        "name": "Controle",
+        "colour": "285",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "if_control"
+          }
+
+        ]
+      },
+
+      {
+        "kind": "category",
+        "name": "Ações",
+        "colour": "240",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "angle_actions"
+          },
+          
+        ]
+      }
+    ]
+
+
   };
 
 
@@ -128,10 +147,10 @@
 
 
 
-  
+
 
   Blockly.inject('blocklyDiv', {
     toolbox: toolbox,
-    scrollbars: false,
+    scrollbars: true,
   });
 })();

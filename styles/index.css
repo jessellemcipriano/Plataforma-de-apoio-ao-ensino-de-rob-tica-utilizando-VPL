@@ -94,3 +94,31 @@ h1 {
    overflow:auto;
    padding: 20px;
 }
+.blocklyToolboxDiv {
+  background-color: black;
+  color: #fff;
+}
+
+.bloco_controle{
+  padding: 1px; 
+  background-color:rgb(147, 91, 165, 0.2); 
+  color:black;
+}
+
+.bloco_condição{
+  padding: 1px; 
+  background-color: rgb(109, 165, 91, 0.3); 
+  color:black ; 
+}
+
+.bloco_variavel{
+  padding: 1px;
+   width: 50px; 
+   background-color:rgb(165, 91, 128, 0.5);
+}
+
+.bloco_ação{
+  padding: 1px;
+   width: 50px; 
+   background-color:rgb(91, 91, 165, 0.8);
+}

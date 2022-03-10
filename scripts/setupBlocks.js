@@ -208,9 +208,47 @@ Blockly.defineBlocksWithJsonArray([
     ],
     "inputsInline": true,
     "previousStatement": null,
+    "nextStatement": null,
     "colour": 240,
     "tooltip": "http://localhost:3000",
     "helpUrl": "http://localhost:3000"
+  },
+
+  {
+    "type": "digital_action",
+    "message0": "%1 %2 o(a) %3 %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+          [
+            "Ative",
+            "HIGH"
+          ],
+          [
+            "Desative",
+            "LOW"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "NAME"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
   }
   
   
@@ -263,7 +301,7 @@ Blockly.JavaScript['if_control'] = function(block) {
   var statements_condition = Blockly.JavaScript.statementToCode(block, 'condition');
   var statements_action = Blockly.JavaScript.statementToCode(block, 'action');
   // TODO: Assemble JavaScript into code variable.
-  var code = ' <br> // bloco referente ao Se...Faça <br> <code class="bloco_controle" > if(' + statements_condition + ') { <br>' + statements_action + '<br>} /* Fim do if */ </code>' ;
+  var code = ' <br> // bloco referente ao Se...Faça <br> <code class="bloco_controle" > if(' + statements_condition + ') { ' + statements_action + '<br>} /* Fim do if */ </code>' ;
   return code;
 };
 
@@ -280,9 +318,16 @@ Blockly.JavaScript['angle_actions'] = function(block) {
   var angle_angle = block.getFieldValue('Angle');
   const conversion = (255 * angle_angle) / 360
   // TODO: Assemble JavaScript into code variable.
-  var code = ' <code class="bloco_ação" > analogWrite(' + '<code class="bloco_variavel" >' + value_name +  '</code>' + ',' + conversion + ') </code>' ;
+  var code = ' <br> <code class="bloco_ação" > analogWrite(' + '<code class="bloco_variavel" >' + value_name +  '</code>' + ',' + conversion + ') </code>' ;
   return code;
 };
 
 
 
+Blockly.JavaScript['digital_action'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<br> <code class="bloco_ação" > digitalWrite(' + '<code class="bloco_variavel" >' + value_name +  '</code>' + ',' +  dropdown_name + ') </code>' ;
+  return code;
+};

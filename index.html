@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Blockly Arduino - TCC</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
 
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
   <link rel="stylesheet" href="styles/index.css">
@@ -17,26 +19,32 @@
     <h1 class="mode-edit mode-blockly">Blockly for Arduino</h1>
   </header>
 
+
+  <div class="row">
+    <div class="col-8" style=" padding: 30px">
+      <div class="blockly-editor">
+        <div id="blocklyDiv" style="height: 80vh; width: auto; "></div>
+        <xml id="toolbox">
+        </xml>
+      </div>
+      <button class="btn-2 btn " id="save">Gerar código</button>
+
+    </div>
+    <div class="col-4"  style=" padding: 30px">
+      <div class="code_space">
+        <code id="código_aqui">
+          ######### CODE ###########
+        </code>
+      </div>
+
+    </div>
+
+  </div>
   <main>
-    
 
-   
-    <div class="blockly-editor">
-      <div id="blocklyDiv" style="height: 280px; width: 1250px;"></div>
-      <xml id="toolbox">
-      </xml>
-    </div>
-    <button class="btn-2"  id="save">Gerar código</button>
- 
 
-    <div class="code_space" >
-      <code id = "código_aqui">
-        oi
-      </code>
-    </div>
-   
   </main>
-  
+
   <button class="mode-blockly mdl-button mdl-js-button" id="save">Voltar</button>
 
 
@@ -45,5 +53,10 @@
   <script src="scripts/main.js"></script>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+  integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
 </html>

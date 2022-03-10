@@ -69,7 +69,7 @@
     "contents": [
       {
         "kind": "category",
-        "name": "Setup",
+        "name": "Sketch",
         "colour": "180",
         "contents": [
           {
@@ -78,19 +78,11 @@
           }, {
             'kind': 'block',
             'type': 'setupinitlabel',
-          },
-
-        ]
-      },
-      {
-        "kind": "category",
-        "name": "Loop",
-        "colour": 180,
-        "contents": [
-          {
+          }, {
             "kind": "block",
             "type": "looplabel"
-          },
+          }
+
         ]
       },
       {
@@ -107,7 +99,7 @@
       },
       {
         "kind": "category",
-        "name": "Variables",
+        "name": "Variáveis",
         "custom": "VARIABLE",
         "colour": 330,
       },
@@ -134,6 +126,10 @@
             "kind": "block",
             "type": "angle_actions"
           },
+          {
+            "kind": "block",
+            "type": "digital_action"
+          }
           
         ]
       }

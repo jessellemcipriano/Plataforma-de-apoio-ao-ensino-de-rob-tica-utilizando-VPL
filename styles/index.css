@@ -33,7 +33,6 @@ h1 {
 }
 
 .blockly-editor {
-  margin-top: 50px;
   top: 64px;
   transition: left .4s;
   height: 280px;
@@ -77,26 +76,44 @@ h1 {
 }
 
 .btn-2{
-  border-radius: 5px;
+  position: relative;
+  top:80px;
+  left: 15px;
+  z-index: 999;
+  border-radius: 3px;
   border: none;
   height: 40px;
   width: 100px;
+  font-size: 12px;
+  color: #fff;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   background-color:rgb(88, 180, 184); 
-  margin-top:10px;
+  margin-top:80px;
+}
+
+.btn-2:hover{
+  background-color:rgb(69, 128, 133); 
+  color: #e4f0f3;
 }
 
 .code_space{
-  margin-top: 40px;
-   height: 200px; 
-   width: 1250px; 
+   height: 80vh; 
+   width: 90%; 
    background-color: rgb(219, 254, 255);
    overflow:auto;
    padding: 20px;
+   color: black!important;
+   font-size: 15px;
+}
+
+code{
+  color: black!important;
+  font-size: 15px!important;
 }
 .blocklyToolboxDiv {
-  background-color: black;
-  color: #fff;
+  background-color: #e4f0f3;
+  color: rgb(0, 0, 0);
+  
 }
 
 .bloco_controle{

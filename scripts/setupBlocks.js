@@ -452,7 +452,7 @@ Blockly.defineBlocksWithJsonArray([
 
   {
     "type": "delay",
-    "message0": "Aguarde %1 milisegundos",
+    "message0": "Aguarde %1 milissegundos",
     "args0": [
       {
         "type": "field_number",

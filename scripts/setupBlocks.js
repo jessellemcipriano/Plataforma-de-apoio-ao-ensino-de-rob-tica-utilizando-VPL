@@ -577,7 +577,6 @@ Blockly.JavaScript['and'] = function(block) {
 
 Blockly.JavaScript['delay'] = function(block) {
   var number_delaytime = block.getFieldValue('delayTime');
-  // TODO: Assemble JavaScript into code variable.
   var code = '<code class="bloco_ação"><br> delay(' + number_delaytime + ');</code>'
   return code;
 };

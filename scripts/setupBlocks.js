@@ -465,7 +465,7 @@ Blockly.defineBlocksWithJsonArray([
     "previousStatement": null,
     "nextStatement": null,
     "colour": 240,
-    "tooltip": "",
+    "tooltip": "Use para pausar a ação por alguns milissegundos",
     "helpUrl": ""
   }
   

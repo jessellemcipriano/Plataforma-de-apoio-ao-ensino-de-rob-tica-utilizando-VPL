@@ -563,7 +563,7 @@ Blockly.JavaScript['pindefinition'] = function(block) {
   var pinNumber = block.getFieldValue('pinNumber');
   var pinmode = block.getFieldValue('pinMode');
   var variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = ' int ' + variable + ' = ' + pinNumber + '; ' + 'pinMode(' + variable + ',' + pinmode + ');'
+  var code = ' int '+ '<code class="bloco_variavel" >' + variable + '</code> = ' + pinNumber + '; ' + 'pinMode(' + variable + ',' + pinmode + ');'
   return code;
 };
 

@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Blockly for the Web Codelab</title>
+  <title>Blockly Arduino - TCC</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
 
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
   <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body mode="maker">
-  <header class="mdl-color--cyan-500">
-    <h1 class="mode-edit mode-blockly">Blockly for Arduino</h1>
+  <header class="" style="background-color: #008184">
+    <h1 class="mode-edit mode-blockly"> Arduino em Blocos </h1>
   </header>
 
-  <main>
- 
-    <button class=" mdl-button mdl-js-button" id="save">Gerar código</button>
-    
 
-    <div class="blockly-editor">
-      <div id="blocklyDiv" style="height: 480px; width: 880px;"></div>
-      <xml id="toolbox" >
+  <div class="row">
+    <div class="col-7" style=" padding: 30px">
+      <div class="blockly-editor">
+        <div id="blocklyDiv" style="height: 80vh; width: auto; "></div>
+        <xml id="toolbox">
+        </xml>
+      </div>
+      <button class="btn-2 btn " id="save">Gerar código</button>
 
-      </xml>
     </div>
+    <div class="col-5"  style=" padding: 30px 30px 30px 10px">
+      <div class="code_space">
+        <code id="código_aqui">
+          ######### CODE ###########
+        </code>
+      </div>
+
+    </div>
+
+  </div>
+  <main>
+
+
   </main>
+
   <button class="mode-blockly mdl-button mdl-js-button" id="save">Voltar</button>
 
 
   <script src="https://unpkg.com/blockly"></script>
-  <script src="scripts/music_maker.js"></script>
-  <script src="scripts/blocks.js"></script>
+  <script src="scripts/setupBlocks.js"></script>
   <script src="scripts/main.js"></script>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+  integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
 </html>

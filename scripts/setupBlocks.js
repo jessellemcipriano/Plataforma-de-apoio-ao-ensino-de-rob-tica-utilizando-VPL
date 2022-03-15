@@ -517,7 +517,7 @@ Blockly.JavaScript['logic_digital_condition'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_conditionstate = block.getFieldValue('ConditionState');
   // TODO: Assemble JavaScript into code variable.
-  var code = ' <code class="bloco_condição" >'+ '<code class="bloco_variavel" >' + 'digitalRead(' + value_name +  ')</code>' + ' == ' +  dropdown_conditionstate + '</code>' ;
+  var code = ' <code class="bloco_condição" >' + 'digitalRead(' + '<code class="bloco_variavel" >' + value_name +  '</code>)' + ' == ' +  dropdown_conditionstate + '</code>' ;
   return code;
 };
 
@@ -555,7 +555,7 @@ Blockly.JavaScript['analogcondition'] = function(block) {
   var condition = block.getFieldValue('condition');
   var conditionvalue = block.getFieldValue('conditionValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'analogRead(' + conditionvariable + ') ' + condition + ' ' + conditionvalue 
+  var code = '<code class="bloco_condição" >analogRead( ' + '<code class="bloco_variavel" >'+ conditionvariable + '</code>) ' + condition + ' ' + conditionvalue +'</code>'
   return code;
 };
 

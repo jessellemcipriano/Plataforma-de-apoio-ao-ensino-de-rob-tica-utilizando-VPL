@@ -509,7 +509,7 @@ Blockly.JavaScript['if_control'] = function(block) {
   var statements_condition = Blockly.JavaScript.statementToCode(block, 'condition');
   var statements_action = Blockly.JavaScript.statementToCode(block, 'action');
   // TODO: Assemble JavaScript into code variable.
-  var code = ' <br> <code class="bloco_controle" > if(' + statements_condition + ') { ' + statements_action + '<br>} /* Fim do if */ </code>' ;
+  var code = ' <br> <code class="bloco_controle" > if(' + statements_condition + ' ) { ' + statements_action + '<br>}  </code>' ;
   return code;
 };
 

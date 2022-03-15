@@ -87,7 +87,7 @@ h1 {
   font-size: 12px;
   color: #fff;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  background-color:rgb(88, 180, 184); 
+  background-color:#008184; 
   margin-top:80px;
 }
 
@@ -99,7 +99,7 @@ h1 {
 .code_space{
    height: 80vh; 
    width: 90%; 
-   background-color: rgb(219, 254, 255);
+   background-color: #030303;
    overflow:auto;
    padding: 20px;
    color: black!important;
@@ -118,24 +118,30 @@ code{
 
 .bloco_controle{
   padding: 1px; 
-  background-color:rgb(147, 91, 165, 0.2); 
+  color:rgb(147, 91, 165)!important; 
   color:black;
 }
 
 .bloco_condição{
   padding: 1px; 
-  background-color: rgb(109, 165, 91, 0.3); 
+  color: rgb(109, 165, 91)!important; 
   color:black ; 
 }
 
 .bloco_variavel{
   padding: 1px;
    width: 50px; 
-   background-color:rgb(165, 91, 128, 0.5);
+  color:rgb(165, 91, 128)!important;
 }
 
 .bloco_ação{
   padding: 1px;
    width: 50px; 
-   background-color:rgb(91, 91, 165, 0.8);
+   color:rgb(91, 91, 165)!important;
+}
+
+.bloco_setupLoop{
+  padding: 1px;
+   width: 50px; 
+   color:#5ba5a5!important;
 }

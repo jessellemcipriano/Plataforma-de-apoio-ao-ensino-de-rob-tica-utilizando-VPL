@@ -9,8 +9,11 @@
 
   function handlePlay(event) {
     loadWorkspace(event.target);
+    
     let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     let finalCode = code.split(' mycodestartHere')
+    console.log('------------')
+    console.log(finalCode)
     document.getElementById('código_aqui').innerHTML = finalCode[1]
 
   }
@@ -74,14 +77,15 @@
         "contents": [
           {
             'kind': 'block',
-            'type': 'setupdefinitionsdois',
-          }, {
-            'kind': 'block',
             'type': 'setupinitlabel',
           }, {
             "kind": "block",
             "type": "looplabel"
-          }
+          },
+          {
+            'kind': 'block',
+            'type': 'pindefinition',
+          },
 
         ]
       },
@@ -94,6 +98,15 @@
             "kind": "block",
             "type": "logic_digital_condition"
           },
+          {
+            "kind": "block",
+            "type": "analogcondition"
+          },
+          {
+            "kind": "block",
+            "type": "and"
+          }
+          
           
         ]
       },
@@ -129,10 +142,28 @@
           {
             "kind": "block",
             "type": "digital_action"
+          },
+          {
+            "kind": "block",
+            "type": "delay"
           }
           
         ]
+      },
+      {
+        "kind": "category",
+        "name": "Calibração",
+        "colour": "40",
+        "contents": [
+          {
+            "kind": "block",
+            "type": "calibracao"
+          },
+         
+          
+        ]
       }
+
     ]
 
 

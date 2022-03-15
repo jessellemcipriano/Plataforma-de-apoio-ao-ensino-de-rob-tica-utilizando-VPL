@@ -249,6 +249,224 @@ Blockly.defineBlocksWithJsonArray([
     "colour": 230,
     "tooltip": "",
     "helpUrl": ""
+  },
+
+  {
+    "type": "calibracao",
+    "message0": " Pino %1 Chamado %2 %3",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+          [
+            "A1",
+            "A1"
+          ],
+          [
+            "A2",
+            "A2"
+          ],
+          [
+            "A3",
+            "A3"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "NAME"
+      }
+    ],
+    "inputsInline": true,
+    "colour": 40,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "analogcondition",
+    "message0": "Leitura do(a) %1 %2 %3 %4",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "conditionVariable"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "condition",
+        "options": [
+          [
+            "Igual a",
+            "=="
+          ],
+          [
+            "Maior que",
+            ">"
+          ],
+          [
+            "Menor que",
+            "<"
+          ],
+          [
+            "Menor ou igual a",
+            "<="
+          ],
+          [
+            "Maior ou igual a",
+            ">="
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_number",
+        "name": "conditionValue",
+        "value": 1063,
+        "min": 0,
+        "max": 1063
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "colour": 105,
+    "tooltip": "",
+    "helpUrl": ""
+  }, 
+
+  {
+    "type": "pindefinition",
+    "message0": "Pino %1 %2 chamado  %3 %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "pinNumber",
+        "options": [
+          [
+            "A0",
+            "A0"
+          ],
+          [
+            "A1",
+            "A1"
+          ],
+          [
+            "A2",
+            "A2"
+          ],
+          [
+            "A3",
+            "A3"
+          ],
+          [
+            "A4",
+            "A4"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "4",
+            "4"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "pinMode",
+        "options": [
+          [
+            "de saída",
+            "OUTPUT"
+          ],
+          [
+            "de entrada",
+            "INPUT"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "variable"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "and",
+    "message0": "%1 e %2 %3",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "first_condition"
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+      {
+        "type": "input_statement",
+        "name": "second_condition"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 105,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "delay",
+    "message0": "Aguarde %1 milisegundos",
+    "args0": [
+      {
+        "type": "field_number",
+        "name": "delayTime",
+        "value": 0,
+        "min": 0,
+        "max": 50000
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 240,
+    "tooltip": "",
+    "helpUrl": ""
   }
   
   
@@ -257,6 +475,7 @@ Blockly.defineBlocksWithJsonArray([
 
 
 Blockly.JavaScript['setupinitlabel'] = function(block) {
+  console.log(Blockly.Blocks.variables_get)
   var statements_setup = Blockly.JavaScript.statementToCode(block, 'Setup');
   console.log(statements_setup)
   const text_pinname = statements_setup.split(';')
@@ -266,24 +485,13 @@ Blockly.JavaScript['setupinitlabel'] = function(block) {
   let i= 0
   
   do{
-    initialize = initialize + '<br>' + text_pinname[i]
-    setupBody = setupBody + '<br>' + text_pinname[i+1]
+    initialize = initialize + '<br>' + text_pinname[i] + ';'
+    setupBody = setupBody + '<br>' + text_pinname[i+1] + ';'
     i= i +2
   }while( i<tamanho)
 
   
-  var code = ' mycodestartHere '+  initialize + '<br> <br> void setup(){ '+ setupBody  + ';<br>}'
-  return code;
-};
-
-
-Blockly.JavaScript['setupdefinitionsdois'] = function(block) {
-  var pinNumber = block.getFieldValue('inputNumber');
-  var dropdown_analogdigtype = block.getFieldValue('AnalogDigType');
-  var inoutpin = block.getFieldValue('InOutPin');
-  var text_pinname = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = ' int ' + text_pinname + ' = ' + pinNumber + '; ' + 'pinMode(' + text_pinname + ',' + inoutpin + ');'
+  var code = ' mycodestartHere '+ '<code class="bloco_setupLoop">' + initialize + '<br> <br> void setup(){ '+ setupBody  + '<br>}</code>'
   return code;
 };
 
@@ -293,7 +501,7 @@ Blockly.JavaScript['setupdefinitionsdois'] = function(block) {
 Blockly.JavaScript['looplabel'] = function(block) {
   var statements_loop = Blockly.JavaScript.statementToCode(block, 'Loop');
   // TODO: Assemble JavaScript into code variable.
-  var code = '<br> <br> void loop() { <br>' + statements_loop + ' <br> }' ;
+  var code = '<code class="bloco_setupLoop"><br> <br> void loop() { <br>' + statements_loop + ' <br> }</code>' ;
   return code;
 };
 
@@ -301,7 +509,7 @@ Blockly.JavaScript['if_control'] = function(block) {
   var statements_condition = Blockly.JavaScript.statementToCode(block, 'condition');
   var statements_action = Blockly.JavaScript.statementToCode(block, 'action');
   // TODO: Assemble JavaScript into code variable.
-  var code = ' <br> // bloco referente ao Se...Faça <br> <code class="bloco_controle" > if(' + statements_condition + ') { ' + statements_action + '<br>} /* Fim do if */ </code>' ;
+  var code = ' <br> <code class="bloco_controle" > if(' + statements_condition + ') { ' + statements_action + '<br>} /* Fim do if */ </code>' ;
   return code;
 };
 
@@ -318,7 +526,7 @@ Blockly.JavaScript['angle_actions'] = function(block) {
   var angle_angle = block.getFieldValue('Angle');
   const conversion = (255 * angle_angle) / 360
   // TODO: Assemble JavaScript into code variable.
-  var code = ' <br> <code class="bloco_ação" > analogWrite(' + '<code class="bloco_variavel" >' + value_name +  '</code>' + ',' + conversion + ') </code>' ;
+  var code = ' <code class="bloco_ação" > analogWrite(' + '<code class="bloco_variavel" >' + value_name +  '</code>' + ',' + conversion + '); </code>' ;
   return code;
 };
 
@@ -328,6 +536,48 @@ Blockly.JavaScript['digital_action'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '<br> <code class="bloco_ação" > digitalWrite(' + '<code class="bloco_variavel" >' + value_name +  '</code>' + ',' +  dropdown_name + ') </code>' ;
+  var code = '<br> <code class="bloco_ação" > digitalWrite(' + '<code class="bloco_variavel" >' + value_name +  '</code>' + ',' +  dropdown_name + '); </code>' ;
+  return code;
+};
+
+Blockly.JavaScript['calibracao'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code =  ' mycodestartHere ' + 'int ' + value_name + ' = ' +  dropdown_name + ' ;<br>' + ' int valorSensor = 0;' + '<br> void setup() { <br> ' + 'pinMode(' + value_name + ', INPUT);<br>' + 'Serial.begin(9600); <br>} <br>void loop() { <br> valorSensor=analogRead('+ value_name+ '); <br> Serial.print("Valor lido pelo Sensor = "); <br> Serial.println(valorSensor);}'
+  console.log(code)
+  return code;
+};
+
+
+Blockly.JavaScript['analogcondition'] = function(block) {
+  var conditionvariable = Blockly.JavaScript.valueToCode(block, 'conditionVariable', Blockly.JavaScript.ORDER_ATOMIC);
+  var condition = block.getFieldValue('condition');
+  var conditionvalue = block.getFieldValue('conditionValue');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'analogRead(' + conditionvariable + ') ' + condition + ' ' + conditionvalue 
+  return code;
+};
+
+Blockly.JavaScript['pindefinition'] = function(block) {
+  var pinNumber = block.getFieldValue('pinNumber');
+  var pinmode = block.getFieldValue('pinMode');
+  var variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = ' int ' + variable + ' = ' + pinNumber + '; ' + 'pinMode(' + variable + ',' + pinmode + ');'
+  return code;
+};
+
+Blockly.JavaScript['and'] = function(block) {
+  var statements_first_condition = Blockly.JavaScript.statementToCode(block, 'first_condition');
+  var statements_second_condition = Blockly.JavaScript.statementToCode(block, 'second_condition');
+  // TODO: Assemble JavaScript into code variable.
+  var code = statements_first_condition +  ' && ' + statements_second_condition  ;
+  return code;
+};
+
+Blockly.JavaScript['delay'] = function(block) {
+  var number_delaytime = block.getFieldValue('delayTime');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<code class="bloco_ação"><br> delay(' + number_delaytime + ');</code>'
   return code;
 };

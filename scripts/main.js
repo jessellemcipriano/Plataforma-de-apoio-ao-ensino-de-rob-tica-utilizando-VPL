@@ -22,7 +22,7 @@
       document.getElementById('código_aqui').innerHTML = finalCodeProcessed
 
     } else {
-      warning = '<code style="color:pink!important" >Ops, Parece que você não definiu a estrutura inicial. Para isso utilize o setup e o loop, igual ao exemplo abaixo</code> <br>  <img src="./example.png" style="max-width:400px; max-height:200px " >'
+      warning = '<code style="color:pink!important" >Ops, Parece que você não definiu a estrutura inicial. Para isso utilize o setup e o loop, igual ao exemplo abaixo</code> <br>  <img src="./setuploop.png" style="max-width:400px; max-height:200px " >'
       document.getElementById('código_aqui').innerHTML = warning
     }
   }

@@ -106,6 +106,12 @@ h1 {
    font-size: 15px;
 }
 
+@media(max-width: 600px){
+  .code_space{
+      padding-top: 100px;
+  }
+}
+
 code{
   color: black!important;
   font-size: 15px!important;

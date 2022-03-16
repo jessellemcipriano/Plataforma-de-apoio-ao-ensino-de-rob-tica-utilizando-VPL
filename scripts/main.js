@@ -64,10 +64,11 @@
       workspace = Blockly.getMainWorkspace();
       workspace.addChangeListener(handlePlay);
     }
+    clearInterval(interval)
   }
 
   enableEditMode();
-  setInterval(onChangeLoadCode, 1000)
+  let interval = setInterval(onChangeLoadCode, 1000)
 
 
   const toolbox = {

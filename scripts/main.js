@@ -6,17 +6,24 @@
 (function () {
 
   let currentButton;
-  let globalWorkSpace 
+  let globalWorkSpace
+  let warning
 
   function handlePlay(event) {
-    
+
     let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     let finalCode = code.split(' mycodestartHere')
     
-    if(finalCode[1] != undefined){
-      
-      finalCodeProcessed= finalCode[1].replace(undefined + ';',"")
-    document.getElementById('código_aqui').innerHTML = finalCodeProcessed
+
+    if (finalCode[1] != undefined ) {
+      warning = '<h1>Arraste um bloquinho</h1>'
+      console.log(warning)
+      finalCodeProcessed = finalCode[1].replace(undefined + ';', "")
+      document.getElementById('código_aqui').innerHTML = finalCodeProcessed
+
+    } else {
+      warning = '<code style="color:pink!important" >Ops, Parece que você não definiu a estrutura inicial. Para isso utilize o setup e o loop, igual ao exemplo abaixo</code> <br>  <img src="./example.png" style="max-width:400px; max-height:200px " >'
+      document.getElementById('código_aqui').innerHTML = warning
     }
   }
 
@@ -28,7 +35,7 @@
     }
   }
 
-   
+
 
   function enableEditMode() {
     document.querySelectorAll('.button').forEach(btn => {
@@ -41,8 +48,8 @@
 
   document.querySelector('#save').addEventListener('click', handlePlay);
   document.querySelector('#toolbox').addEventListener('click', handlePlay);
-  
-  
+
+
 
   function enableBlocklyMode(e) {
     document.body.setAttribute('mode', 'blockly');
@@ -50,29 +57,25 @@
     loadWorkspace(currentButton);
   }
 
-  function onChangeLoadCode(){
-    console.log('to aqui')
-    if(Blockly.getMainWorkspace() != undefined){
-     
-    const workspace = Blockly.getMainWorkspace();
-    workspace.addChangeListener(handlePlay);}
+
+  let workspace
+  function onChangeLoadCode() {
+    if (Blockly.getMainWorkspace() != undefined && workspace != '') {
+      workspace = Blockly.getMainWorkspace();
+      workspace.addChangeListener(handlePlay);
     }
+  }
 
   enableEditMode();
+  setInterval(onChangeLoadCode, 1000)
 
-  
- 
-  setInterval(onChangeLoadCode, 3000)
-  
-
-  
 
   const toolbox = {
     "kind": "categoryToolbox",
     "contents": [
       {
         "kind": "category",
-        "name": "Sketch",
+        "name": "Estrutura",
         "colour": "180",
         "contents": [
           {
@@ -106,8 +109,8 @@
             "kind": "block",
             "type": "and"
           }
-          
-          
+
+
         ]
       },
       {
@@ -147,7 +150,7 @@
             "kind": "block",
             "type": "delay"
           }
-          
+
         ]
       },
       {
@@ -159,8 +162,8 @@
             "kind": "block",
             "type": "calibracao"
           },
-         
-          
+
+
         ]
       }
 

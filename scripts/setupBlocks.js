@@ -475,9 +475,8 @@ Blockly.defineBlocksWithJsonArray([
 
 
 Blockly.JavaScript['setupinitlabel'] = function(block) {
-  console.log(Blockly.Blocks.variables_get)
+ 
   var statements_setup = Blockly.JavaScript.statementToCode(block, 'Setup');
-  console.log(statements_setup)
   const text_pinname = statements_setup.split(';')
   const tamanho=  text_pinname.length -1
   let initialize =''
@@ -490,7 +489,6 @@ Blockly.JavaScript['setupinitlabel'] = function(block) {
     i= i +2
   }while( i<tamanho)
 
-  console.log('---------------------' + initialize)
   if(initialize == '<br>;'){
     initialize = ''
   }
@@ -505,15 +503,15 @@ Blockly.JavaScript['setupinitlabel'] = function(block) {
 Blockly.JavaScript['looplabel'] = function(block) {
   var statements_loop = Blockly.JavaScript.statementToCode(block, 'Loop');
   // TODO: Assemble JavaScript into code variable.
-  var code = '<code class="bloco_setupLoop"><br> <br> void loop() { <br>' + statements_loop + ' <br> }</code>' ;
+  var code = '<code class="bloco_setupLoop"><br> <br> void loop() { <br>' + statements_loop + ' <br><br> }</code>' ;
   return code;
 };
 
 Blockly.JavaScript['if_control'] = function(block) {
   var statements_condition = Blockly.JavaScript.statementToCode(block, 'condition');
   var statements_action = Blockly.JavaScript.statementToCode(block, 'action');
-  // TODO: Assemble JavaScript into code variable.
-  var code = ' <br> <code class="bloco_controle" > if(' + statements_condition + ' ) { ' + statements_action + '<br>}  </code>' ;
+  statements_action=statements_action.replace('&&',"")
+  var code = ' <br> <code class="bloco_controle" > if(' + statements_condition + ' ) { <br> ' + statements_action + '<br>}  </code>' ;
   return code;
 };
 
@@ -549,7 +547,7 @@ Blockly.JavaScript['calibracao'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code =  ' mycodestartHere ' + '<code style="color:#a58c5b!important"> int ' + value_name + ' = ' +  dropdown_name + ' ;<br>' + ' int valorSensor = 0;' + '<br> void setup() { <br> ' + 'pinMode(' + value_name + ', INPUT);<br>' + 'Serial.begin(9600); <br>} <br>void loop() { <br> valorSensor=analogRead('+ value_name+ '); <br> Serial.print("Valor lido pelo Sensor = "); <br> Serial.println(valorSensor);}</code>'
-  console.log(code)
+  
   return code;
 };
 

@@ -99,10 +99,10 @@ h1 {
 .code_space{
    height: 80vh; 
    width: 90%; 
-   background-color: #222020;
+   background-color: #38393a;
    overflow:auto;
    padding: 20px;
-   color: black!important;
+   color: hsl(105deg 100% 50%)!important;
    font-size: 15px;
 }
 
@@ -134,7 +134,7 @@ code{
 
 .bloco_condição{
   padding: 1px; 
-  color: hsl(105deg 100% 50%)!important;; 
+  color: hsl(105deg 100% 50%)!important; 
   color:black ; 
 }
 

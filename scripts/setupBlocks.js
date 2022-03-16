@@ -490,6 +490,10 @@ Blockly.JavaScript['setupinitlabel'] = function(block) {
     i= i +2
   }while( i<tamanho)
 
+  console.log('---------------------' + initialize)
+  if(initialize == '<br>;'){
+    initialize = ''
+  }
   
   var code = ' mycodestartHere '+ '<code class="bloco_setupLoop">' + initialize + '<br> <br> void setup(){ '+ setupBody  + '<br>}</code>'
   return code;

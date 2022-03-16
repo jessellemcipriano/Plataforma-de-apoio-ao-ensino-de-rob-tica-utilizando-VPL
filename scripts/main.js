@@ -12,9 +12,12 @@
     
     let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     let finalCode = code.split(' mycodestartHere')
-    console.log('------------')
-    console.log(finalCode)
-    document.getElementById('código_aqui').innerHTML = finalCode[1]
+    
+    if(finalCode[1] != undefined){
+      
+      finalCodeProcessed= finalCode[1].replace(undefined + ';',"")
+    document.getElementById('código_aqui').innerHTML = finalCodeProcessed
+    }
   }
 
 

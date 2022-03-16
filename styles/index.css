@@ -106,10 +106,24 @@ h1 {
    font-size: 15px;
 }
 
-@media(max-width: 600px){
-  .code_space{
-      padding-top: 100px;
-  }
+.blockly_space{
+ height: 80vh; 
+ width: auto; 
+}
+
+.code_class{
+padding: 30px 30px 30px 10px;
+} 
+
+@media(max-width:600px){
+.blockly_space{
+ height: 55vh; 
+ width: auto; 
+}
+
+.code_class{
+padding: 30px 30px 30px 30px;
+}
 }
 
 code{

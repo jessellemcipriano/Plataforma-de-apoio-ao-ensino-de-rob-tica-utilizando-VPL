@@ -124,30 +124,31 @@ code{
 
 .bloco_controle{
   padding: 1px; 
-  color:rgb(147, 91, 165)!important; 
-  color:black;
+  color:hsl(285deg 100% 60%)!important; 
+  
 }
 
 .bloco_condição{
   padding: 1px; 
-  color: rgb(109, 165, 91)!important; 
-  color:black ; 
+  color: hsl(105deg 100% 50%)!important;
+  
 }
 
 .bloco_variavel{
   padding: 1px;
    width: 50px; 
-  color:rgb(165, 91, 128)!important;
+  color:hsl(330deg 100% 50%)!important;
 }
 
 .bloco_ação{
   padding: 1px;
    width: 50px; 
-   color:rgb(91, 91, 165)!important;
+   color:hsl(240deg 70% 50%)!important;
 }
 
 .bloco_setupLoop{
   padding: 1px;
    width: 50px; 
-   color:#5ba5a5!important;
+   color:hsl(180deg 100% 50%)!important;;
 }
+

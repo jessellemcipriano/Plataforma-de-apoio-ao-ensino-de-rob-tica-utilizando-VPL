@@ -64,7 +64,19 @@
 
 
 
+  function onChangeLoadCode(){
+    console.log('to aqui')
+    if(Blockly.getMainWorkspace() != undefined){
+     
+    const workspace = Blockly.getMainWorkspace();
+    workspace.addChangeListener(handlePlay);}
+    }
+
   enableEditMode();
+
+  
+ 
+  setInterval(onChangeLoadCode, 3000)
 
 
   const toolbox = {

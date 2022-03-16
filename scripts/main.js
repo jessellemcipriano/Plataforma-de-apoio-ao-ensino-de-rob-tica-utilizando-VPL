@@ -6,17 +6,17 @@
 (function () {
 
   let currentButton;
+  let globalWorkSpace 
 
   function handlePlay(event) {
-    loadWorkspace(event.target);
     
     let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     let finalCode = code.split(' mycodestartHere')
     console.log('------------')
     console.log(finalCode)
     document.getElementById('código_aqui').innerHTML = finalCode[1]
-
   }
+
 
   function loadWorkspace(button) {
     const workspace = Blockly.getMainWorkspace();
@@ -25,36 +25,21 @@
     }
   }
 
-  function save(button) {
-    button.blocklySave = Blockly.serialization.workspaces.save(
-      Blockly.getMainWorkspace());
-  }
-
-  function handleSave() {
-    document.body.setAttribute('mode', 'edit');
-    save(currentButton);
-  }
+   
 
   function enableEditMode() {
-
-    document.body.setAttribute('mode', 'edit');
     document.querySelectorAll('.button').forEach(btn => {
       btn.removeEventListener('click', handlePlay);
       btn.addEventListener('click', enableBlocklyMode);
     });
   }
 
-  function enableMakerMode() {
-
-    document.body.setAttribute('mode', 'maker');
-    document.querySelectorAll('.button').forEach(btn => {
-      btn.addEventListener('click', handlePlay);
-      btn.removeEventListener('click', enableBlocklyMode);
-    });
-  }
 
 
   document.querySelector('#save').addEventListener('click', handlePlay);
+  document.querySelector('#toolbox').addEventListener('click', handlePlay);
+  
+  
 
   function enableBlocklyMode(e) {
     document.body.setAttribute('mode', 'blockly');
@@ -62,10 +47,22 @@
     loadWorkspace(currentButton);
   }
 
-
+  function onChangeLoadCode(){
+    console.log('to aqui')
+    if(Blockly.getMainWorkspace() != undefined){
+     
+    const workspace = Blockly.getMainWorkspace();
+    workspace.addChangeListener(handlePlay);}
+    }
 
   enableEditMode();
 
+  
+ 
+  setInterval(onChangeLoadCode, 3000)
+  
+
+  
 
   const toolbox = {
     "kind": "categoryToolbox",

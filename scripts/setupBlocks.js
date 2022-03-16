@@ -555,7 +555,7 @@ Blockly.JavaScript['analogcondition'] = function(block) {
   var condition = block.getFieldValue('condition');
   var conditionvalue = block.getFieldValue('conditionValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '<code class="bloco_condição" >analogRead( ' + '<code class="bloco_variavel" >'+ conditionvariable + '</code>) ' + condition + ' ' + conditionvalue +'</code>'
+  var code = '<code class="bloco_condição" >analogRead(' + '<code class="bloco_variavel" >'+ conditionvariable + '</code>) ' + condition + ' ' + conditionvalue +'</code>'
   return code;
 };
 

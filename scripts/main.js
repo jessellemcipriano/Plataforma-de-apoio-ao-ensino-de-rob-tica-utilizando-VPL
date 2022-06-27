@@ -3,6 +3,10 @@
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
+import {estrutura} from './estrutura/toolboxCategory';
+console.log(estrutura);
+
+
 (function () {
 
   let currentButton;
@@ -64,34 +68,17 @@
       workspace = Blockly.getMainWorkspace();
       workspace.addChangeListener(handlePlay);
     }
+    clearInterval(interval)
   }
 
   enableEditMode();
-  setInterval(onChangeLoadCode, 1000)
+  let interval = setInterval(onChangeLoadCode, 1000)
 
 
   const toolbox = {
     "kind": "categoryToolbox",
     "contents": [
-      {
-        "kind": "category",
-        "name": "Estrutura",
-        "colour": "180",
-        "contents": [
-          {
-            'kind': 'block',
-            'type': 'setupinitlabel',
-          }, {
-            "kind": "block",
-            "type": "looplabel"
-          },
-          {
-            'kind': 'block',
-            'type': 'pindefinition',
-          },
-
-        ]
-      },
+      estrutura,
       {
         "kind": "category",
         "name": "Condicionais",
@@ -112,14 +99,7 @@
 
 
         ]
-      },
-      {
-        "kind": "category",
-        "name": "Variáveis",
-        "custom": "VARIABLE",
-        "colour": 330,
-      },
-
+      }, 
       {
         "kind": "category",
         "name": "Controle",
@@ -155,7 +135,7 @@
       },
       {
         "kind": "category",
-        "name": "Calibração",
+        "name": "Calibração de sensores",
         "colour": "40",
         "contents": [
           {
@@ -165,17 +145,37 @@
 
 
         ]
-      }
+      },
+      {
+        "kind": "category",
+        "name": "Componentes eletrônicos",
+        "colour": "330",
+        "contents": [
+      
+          {
+            "kind": "category",
+            "name": "Sensores",
+            "contents": [
+              {
+                "kind": "block",
+                "type": "analogcondition"
+              }
+            ]
+          },
+          {
+            "kind": "category",
+            "name": "Criar novo componente",
+            "custom": "VARIABLE",
+          },
+
+
+        ]
+      },
 
     ]
 
 
   };
-
-
-
-
-
 
 
 

@@ -8,7 +8,7 @@
  Blockly.defineBlocksWithJsonArray([
     {
         "type": "angle_actions",
-        "message0": "Gire o %1 %2 em %3",
+        "message0": "Gire o %1 %2 para %3",
         "args0": [
           {
             "type": "input_dummy"

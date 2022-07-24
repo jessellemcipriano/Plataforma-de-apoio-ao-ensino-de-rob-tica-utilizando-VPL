@@ -61,7 +61,7 @@
   {
     
     "type": "pindefinition",
-    "message0": "Pino %1 %2 chamado  %3 %4",
+    "message0": "Pino %1 %2 conectado com %3 %4",
     "args0": [
       {
         "type": "field_dropdown",
@@ -133,6 +133,98 @@
     "colour": 180,
     "tooltip": "",
     "helpUrl": ""
+  },
+  //----------------------------------------------------------------------------//
+  {
+    "type": "motor_dc_1_pindefinition",
+    "message0": "conexão  %1 do MOTOR_DC_1 %2 ligado ao pino %3",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "pinName",
+        "options": [
+          [
+            "N1",
+            "N1 "
+          ],
+          [
+            "N2",
+            "N2 "
+          ],
+          
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "pinNumber",
+        "options": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  //----------------------------------------------------------------------------//
+  {
+    "type": "motor_dc_2_pindefinition",
+    "message0": "conexão  %1 do MOTOR_DC_2 %2 ligado ao pino %3",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "pinName",
+        "options": [
+          [
+            "N3",
+            "N3 "
+          ],
+          [
+            "N4",
+            "N4 "
+          ],
+          
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "pinNumber",
+        "options": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
   }
+  
 ]);
+
 

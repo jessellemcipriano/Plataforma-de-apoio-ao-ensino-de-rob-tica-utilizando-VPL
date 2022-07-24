@@ -7,10 +7,6 @@
  Blockly.defineBlocksWithJsonArray([
    
 
-  
-
-  
-
   {
     "type": "calibracao",
     "message0": " Pino %1 Chamado %2 %3",

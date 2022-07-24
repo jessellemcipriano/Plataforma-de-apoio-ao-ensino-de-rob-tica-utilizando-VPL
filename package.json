@@ -1,0 +1,20 @@
+{
+  "name": "mvp_par",
+  "version": "1.0.0",
+  "description": "Plataforma para aprendizado de robótica através de elementos gráficos",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/JessyCipriano/mvp_par.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/JessyCipriano/mvp_par/issues"
+  },
+  "homepage": "https://gitlab.com/JessyCipriano/mvp_par#readme"
+}

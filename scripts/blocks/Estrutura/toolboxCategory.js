@@ -14,8 +14,14 @@ const estrutura = {
         'kind': 'block',
         'type': 'pindefinition',
       },
-
+      {
+        'kind': 'block',
+        'type': 'motor_dc_1_pindefinition',
+      },
+      {
+        'kind': 'block',
+        'type': 'motor_dc_2_pindefinition',
+      }
+      
     ]
   }
-
-  export default estrutura;

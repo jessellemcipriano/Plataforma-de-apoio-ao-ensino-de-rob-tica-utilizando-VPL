@@ -60,8 +60,8 @@
 //----------------------------------------------------------------------------//
   {
     
-    "type": "pindefinition",
-    "message0": "Pino %1 %2 conectado com %3 %4",
+    "type": "analogpindefinition",
+    "message0": "Pino analógico %1 %2 conectado com %3 %4",
     "args0": [
       {
         "type": "field_dropdown",
@@ -88,20 +88,8 @@
             "A4"
           ],
           [
-            "1",
-            "1"
-          ],
-          [
-            "2",
-            "2"
-          ],
-          [
-            "3",
-            "3"
-          ],
-          [
-            "4",
-            "4"
+            "A5",
+            "A5"
           ]
         ]
       },
@@ -215,6 +203,147 @@
             "1"
           ]
         ]
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "motor_dc_2_pindefinition",
+    "message0": "conexão  %1 do MOTOR_DC_2 %2 ligado ao pino %3",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "pinName",
+        "options": [
+          [
+            "N3",
+            "N3 "
+          ],
+          [
+            "N4",
+            "N4 "
+          ],
+          
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "pinNumber",
+        "options": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ]
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    
+    "type": "digpindefinition",
+    "message0": "Pino digital %1 %2 conectado com %3 %4",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "pinNumber",
+        "options": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "3 - PWM",
+            "3"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "5 - PWM",
+            "5"
+          ],
+          [
+            "6 - PWM",
+            "6"
+          ],
+          [
+            "7",
+            "7"
+          ],
+          [
+            "8",
+            "8"
+          ],
+          [
+            "9 - PWM",
+            "9"
+          ],
+          [
+            "10 - PWM",
+            "10"
+          ],
+          [
+            "11 - PWM",
+            "11"
+          ],
+          [
+            "12",
+            "12"
+          ],
+          [
+            "13",
+            "13"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "pinMode",
+        "options": [
+          [
+            "de saída",
+            "OUTPUT"
+          ],
+          [
+            "de entrada",
+            "INPUT"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "variable"
       }
     ],
     "inputsInline": true,

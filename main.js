@@ -4,9 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-
-
-
 (function () {
 
   let currentButton;
@@ -65,7 +62,14 @@
       workspace = Blockly.getMainWorkspace();
       workspace.addChangeListener(handlePlay);
     }
+    let div = document.getElementsByClassName('variavel')
+    for (let i = 0; i < div.length; i++) {
+      console.log(div[i])
+    }
+    console.log(div)
+    
     clearInterval(interval)
+    
   }
 
   enableEditMode();

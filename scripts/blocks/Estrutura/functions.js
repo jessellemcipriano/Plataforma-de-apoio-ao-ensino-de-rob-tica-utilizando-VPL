@@ -17,9 +17,9 @@ Blockly.JavaScript['setupinitlabel'] = function (block) {
           library += '<br>#include &ltServo.h&gt <br><br>'
           library += 'Servo ' + statement.variableName + '; <br>'
           library += 'int  servomotor_angle = 0; <br>'
-          initialize += '#define SERVO ' + statement.pinNumber + '<br>'
+          initialize += '<br>#define SERVO ' + statement.pinNumber + '<br>'
           setupBody += ' <br>' +statement.variableName+'.attach(SERVO);'
-          setupBody += ' <br>' +statement.variableName+'.write(servomotor_angle);'
+          setupBody += ' <br>' +statement.variableName+'.write(servomotor_angle);<br>'
         }
 
         else {
@@ -51,7 +51,25 @@ Blockly.JavaScript['looplabel'] = function (block) {
 
 
 
-Blockly.JavaScript['pindefinition'] = function (block) {
+Blockly.JavaScript['analogpindefinition'] = function (block) {
+  var pinNumber = block.getFieldValue('pinNumber');
+  var pinmode = block.getFieldValue('pinMode');
+  var variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_ATOMIC);
+  variable = variable.replace('(', '')
+  variable = variable.replace(')', '')
+  console.log(variable)
+
+  var code = {
+    variableName: variable,
+    pinNumber: pinNumber,
+    pinMode: pinmode
+  }
+
+  return JSON.stringify(code);
+
+};
+
+Blockly.JavaScript['digpindefinition'] = function (block) {
   var pinNumber = block.getFieldValue('pinNumber');
   var pinmode = block.getFieldValue('pinMode');
   var variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_ATOMIC);

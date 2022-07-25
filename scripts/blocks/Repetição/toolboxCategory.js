@@ -5,7 +5,7 @@ let repeticao =  {
     "contents": [
       {
         "kind": "block",
-        "type": "if_control"
+        "type": "for"
       }
   
     ]

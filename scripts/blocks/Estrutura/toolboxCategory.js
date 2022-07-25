@@ -12,7 +12,11 @@ const estrutura = {
       },
       {
         'kind': 'block',
-        'type': 'pindefinition',
+        'type': 'analogpindefinition',
+      },
+      {
+        'kind': 'block',
+        'type': 'digpindefinition',
       },
       {
         'kind': 'block',

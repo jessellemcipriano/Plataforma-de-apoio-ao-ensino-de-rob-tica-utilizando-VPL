@@ -117,7 +117,7 @@ h1 {
 }
 
 code{
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 15px!important;
 }
 
@@ -127,38 +127,38 @@ code{
   
 }
 
-.bloco_controle{
-  padding: 1px; 
-  color:hsl(105deg 100% 50%)!important; 
-  color:black;
-}
-
-.bloco_condição{
-  padding: 1px; 
-  color: hsl(105deg 100% 50%)!important; 
-  color:black ; 
-}
-
 .variavel{
   padding: 1px;
    width: 50px; 
-  color:hsl(330deg 100% 50%)!important;
+  background-color:hsl(330deg 100% 50%)!important;
 }
 
-.bloco_ação{
+.estrutura:hover{
   padding: 1px;
    width: 50px; 
-   color:hsl(240deg 100% 83%)!important;
+   background-color:hsl(180deg 100% 50%)!important;
 }
 
-.bloco_setupLoop{
-  padding: 1px;
-   width: 50px; 
-   color:hsl(180deg 100% 50%)!important;
+.condicionais{
+  padding: 3px; 
+  margin-left: 20px;
 }
 
-.bloco_estado{
+.condicionais:hover{
+   background-color:hsl(105deg 100% 50%)!important; 
+   color: #38393a;
+}
+
+.repeticao:hover{
+  padding: 5px;
+   width: 50px; 
+   background-color:#935ba5!important;
+}
+
+.estados:hover .operadores:hover .acoes:hover{
   padding: 1px;
    width: 50px; 
-   color:#5b67a5!important;
+   background-color:hsl(240deg 100% 83%)!important;
 }
+
+

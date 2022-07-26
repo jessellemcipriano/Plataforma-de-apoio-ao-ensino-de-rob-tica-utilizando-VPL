@@ -9,6 +9,27 @@ let operadores = {
     },
     {
       "kind": "block",
+      "type": "menor"
+    },
+    {
+      "kind": "block",
+      "type": "menorigual"
+    },
+    {
+      "kind": "block",
+      "type": "igual"
+
+    },
+    {
+      "kind": "block",
+      "type": "diferente"
+    },
+    {
+      "kind": "block",
+      "type": "maiorigual"
+    },
+    {
+      "kind": "block",
       "type": "analogvalue"
     }
     

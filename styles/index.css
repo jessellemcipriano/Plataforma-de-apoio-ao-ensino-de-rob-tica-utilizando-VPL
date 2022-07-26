@@ -127,11 +127,11 @@ code{
   
 }
 
-.variavel{
+/* .variavel{
   padding: 1px;
    width: 50px; 
   background-color:hsl(330deg 100% 50%)!important;
-}
+} */
 
 .estrutura:hover{
   padding: 1px;
@@ -162,3 +162,18 @@ code{
 }
 
 
+.variavel:hover {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: hsl(330deg 100% 50%)!important;
+  }
+  80% {
+    background-color: rgb(253, 112, 182)!important;
+  }
+  100% {
+    background-color: transparent;
+  }
+}

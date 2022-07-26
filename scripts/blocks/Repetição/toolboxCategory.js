@@ -6,6 +6,14 @@ let repeticao =  {
       {
         "kind": "block",
         "type": "for"
+      },
+      {
+        "kind": "block",
+        "type": "dowhile"
+      },
+      {
+        "kind": "block",
+        "type": "while"
       }
   
     ]

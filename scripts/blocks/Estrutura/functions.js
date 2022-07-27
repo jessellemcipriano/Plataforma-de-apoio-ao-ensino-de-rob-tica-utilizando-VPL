@@ -24,7 +24,7 @@ Blockly.JavaScript['setupinitlabel'] = function (block) {
 
         else {
           initialize = initialize + '<br> int  ' + statement.variableName + '  = ' + statement.pinNumber + ';'
-          setupBody = setupBody + '<br> pinMode( ' + statement.variableName + ' ,' + statement.pinMode + ');'
+          setupBody = setupBody + '  pinMode( ' + statement.variableName + ', ' + statement.pinMode + ');<br>'
         }
 
 
@@ -33,7 +33,7 @@ Blockly.JavaScript['setupinitlabel'] = function (block) {
       }
     }
   }
-  var code = library + '<br><code class="bloco_setupLoop">' + initialize + '<br> <br> void setup(){ ' + setupBody + '<br>}</code>'
+  var code = library + '<br><code class="estrutura">' + initialize + '<br> <br> void setup(){ <div style="padding-left:20px">' + setupBody + '</div> <br>}</code>'
   return code;
 };
 
@@ -44,7 +44,7 @@ Blockly.JavaScript['setupinitlabel'] = function (block) {
 Blockly.JavaScript['looplabel'] = function (block) {
   var statements_loop = Blockly.JavaScript.statementToCode(block, 'Loop');
   // TODO: Assemble JavaScript into code variable.
-  var code = '<code class="bloco_setupLoop"><br> <br> void loop() { <br>' + statements_loop + ' <br><br> }</code>';
+  var code = '<code class="estrutura"><br> <br> void loop() { <div style="padding-left:20px">' + statements_loop + ' </div> }</code>';
   return code;
 };
 

@@ -8,10 +8,10 @@ Blockly.JavaScript['if'] = function(block) {
  
   var code
   if(statements_condition.includes('HIGH') || statements_condition.includes('LOW')){
-    code = ' <br> <code class="condicionais" > if( digitalRead(' + value_conditionvariable + ') == ' +  statements_condition + ' ) { <br> ' + statements_action + '<br>}  </code>' ;
+    code = ' <br> <code class="condicionais" > if( digitalRead(' + value_conditionvariable + ') == ' +  statements_condition + ' ) { <div style="padding-left:20px"> ' + statements_action + '</div>}  </code><br><br>' ;
   }
   else{
-    code = ' <br> <code class="condicionais" > if( analogRead(' + value_conditionvariable + ') ' +  statements_condition + ' ) { <br> ' + statements_action + '<br>}  </code>' ;
+    code = ' <br> <code class="condicionais" > if( analogRead(' + value_conditionvariable + ') ' +  statements_condition + ' ) { <div style="padding-left:20px"> ' + statements_action + '</div>}  </code><br><br>' ;
   }
   return code;
 };
@@ -29,10 +29,10 @@ Blockly.JavaScript['ifelse'] = function(block) {
 
   var code
   if(statements_condition.includes('HIGH') || statements_condition.includes('LOW')){
-    code = ' <br> <code class="condicionais" > if( digitalRead(' + value_conditionvariable + ') == ' +  statements_condition + ' ) { <br> ' + statements_action + '<br>}  else { <br>' + statements_elseaction + '<br>}  </code>' ;
+    code = ' <br> <code class="condicionais" > if( digitalRead(' + value_conditionvariable + ') == ' +  statements_condition + ' ) { <div style="padding-left:20px">' + statements_action + '</div>} <br> else { <div style="padding-left:20px">' + statements_elseaction + '</div>}  </code><br>' ;
   }
   else{
-    code = ' <br> <code class="condicionais" > if( analogRead(' + value_conditionvariable + ') ' +  statements_condition + ' ) { <br> ' + statements_action + '<br>}  else { <br>' + statements_elseaction + '<br>}  </code>' ;
+    code = ' <br> <code class="condicionais" > if( analogRead(' + value_conditionvariable + ') ' +  statements_condition + ' ) {<div style="padding-left:20px"> ' + statements_action + '</div>} <br> else { <div style="padding-left:20px">' + statements_elseaction + '</div>}  </code><br>' ;
   }
   return code;
   

@@ -133,47 +133,92 @@ code{
   background-color:hsl(330deg 100% 50%)!important;
 } */
 
-.estrutura:hover{
-  padding: 1px;
-   width: 50px; 
-   background-color:hsl(180deg 100% 50%)!important;
-}
-
-.condicionais{
-  padding: 3px; 
-  margin-left: 20px;
-}
-
-.condicionais:hover{
-   background-color:hsl(105deg 100% 50%)!important; 
-   color: #38393a;
-}
-
-.repeticao:hover{
-  padding: 5px;
-   width: 50px; 
-   background-color:#935ba5!important;
-}
-
-.estados:hover .operadores:hover .acoes:hover{
-  padding: 1px;
-   width: 50px; 
-   background-color:hsl(240deg 100% 83%)!important;
+.estrutura{
+   animation: fadeInEstrutura 1s;
+   color:white;
 }
 
 
-.variavel:hover {
-  animation: fadeIn 1s;
-}
-
-@keyframes fadeIn {
+@keyframes fadeInEstrutura {
   0% {
-    background-color: hsl(330deg 100% 50%)!important;
-  }
-  80% {
-    background-color: rgb(253, 112, 182)!important;
+    color: rgb(0, 255, 255)
   }
   100% {
-    background-color: transparent;
+    color: rgb(178, 245, 245)
+  }
+}
+
+
+
+.condicionais{
+  animation: fadeInCondicionais 2s;
+  color: white;
+}
+
+
+@keyframes fadeInCondicionais {
+  from {
+    color: #40ff00;
+  }
+  to {
+    color: #cbdfc4;
+  }
+}
+
+
+.repeticao{ 
+  animation: fadeInRepeticao 2s;
+   color:white;
+}
+
+@keyframes fadeInRepeticao {
+  from {
+    color: #a83fff;
+  }
+  to {
+    color: #a8a8ff;
+  }
+}
+
+
+
+.estados .operadores .acoes{
+  animation: fadeInEstados 2s;
+  color:white;
+}
+
+.operadores{
+  animation: fadeInEstados 2s;
+  color:white;
+}
+
+.acoes{
+  animation: fadeInEstados 2s;
+  color:white;
+}
+
+
+@keyframes fadeInEstados {
+  from {
+    color: #a83fff;
+  }
+  to {
+    color: #a8a8ff;
+  }
+}
+
+
+
+.variavel {
+  animation: fadeInVariavel 3s;
+  color:white;
+}
+
+@keyframes fadeInVariavel {
+  from {
+    color: #ff0080;
+  }
+  to {
+    color: #ff0080!important;
   }
 }

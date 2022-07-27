@@ -1,7 +1,7 @@
 
 Blockly.JavaScript['delay'] = function (block) {
   var number_delaytime = block.getFieldValue('delayTime');
-  var code = '<code class="acoes"><br> delay(' + number_delaytime + ');</code>'
+  var code = '<code class="acoes">delay(' + number_delaytime + ');</code>'
   return code;
 };
 
@@ -28,7 +28,7 @@ Blockly.JavaScript['digital_action'] = function (block) {
     actionCode += 'digitalWrite(<code class="variavel">' + value_name + '</code>,' + dropdown_name + ');<br>';
   }
 
-  var code = '<br> <code class="acoes" >' + actionCode + ' </code>';
+  var code = ' <code class="acoes" >' + actionCode + ' </code>';
   return code;
 };
 
@@ -40,7 +40,7 @@ Blockly.JavaScript['angle_actions'] = function (block) {
   conditionvariable = '<code class="variavel">' + conditionvariable + '</code>'
   
   if(conditionvariable.includes('motorservo')){
-    return '<br><code class="acoes" > '+conditionvariable +'.write(' + angle_value + ');</code>'
+    return '<code class="acoes" > '+conditionvariable +'.write(' + angle_value + ');</code>'
   }
 
   var code = ' <code class="acoes" > analogWrite(' + '<code class="bloco_variavel" >' + conditionvariable + '</code>' + ',' + conversion + '); </code>';

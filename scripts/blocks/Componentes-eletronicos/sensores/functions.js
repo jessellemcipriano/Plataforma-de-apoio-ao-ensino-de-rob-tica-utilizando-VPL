@@ -1,5 +1,5 @@
 Blockly.JavaScript['sensortemperatura'] = function (block) {
-  var variable = 'sensorTemperatura';
+  var variable = '<code class="variavel">sensorTemperatura</code>';
   return [variable, 99];
 };
 

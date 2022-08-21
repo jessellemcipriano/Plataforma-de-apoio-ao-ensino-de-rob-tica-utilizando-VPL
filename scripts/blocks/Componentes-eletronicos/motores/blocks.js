@@ -21,7 +21,7 @@
       "output": null,
       "colour": 330,
       "tooltip": "",
-      "helpUrl": "file:///C:/Users/jesse/TCC/mvp_par/servomotor.html"
+      "helpUrl": "https://jessycipriano.gitlab.io/mvp_par/servomotor.html"
     },
     {
       "type": "motordc1",

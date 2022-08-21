@@ -1,7 +1,7 @@
 
 Blockly.JavaScript['delay'] = function (block) {
   var number_delaytime = block.getFieldValue('delayTime');
-  var code = '<code class="acoes">delay(' + number_delaytime + ');</code>'
+  var code = '<code class="acoes">delay(' + number_delaytime + '); <br></code>'
   return code;
 };
 

@@ -1,6 +1,6 @@
 Blockly.JavaScript['chavefimdecurso'] = function (block) {
   var variable = 'chavefimdecurso';
-  return [variable, 99];
+  return variable;
 };
 
 Blockly.JavaScript['chaveonoff'] = function (block) {

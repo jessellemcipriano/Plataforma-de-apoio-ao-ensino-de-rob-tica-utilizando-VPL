@@ -9,7 +9,7 @@
   {
     "type": "acionado",
     "lastDummyAlign0": "RIGHT",
-    "message0": "Estiver acionado",
+    "message0": "Estiver acionado(a)",
     "inputsInline": false,
     "previousStatement": null,
     "colour": 230,
@@ -19,7 +19,7 @@
   {
     "type": "naoacionado",
     "lastDummyAlign0": "RIGHT",
-    "message0": "Não estiver acionado",
+    "message0": "Não estiver acionado(a)",
     "inputsInline": false,
     "previousStatement": null,
     "colour": 230,

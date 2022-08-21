@@ -14,12 +14,12 @@ Blockly.JavaScript['dowhile'] = function(block) {
   
   if(statements_condition.includes('HIGH') || statements_condition.includes('LOW')){
     value_conditionvariable = '<code class="variavel">' + value_conditionvariable + '</code>'
-    var code = ' <br> <code class="repeticao" > while( digitalRead(' + value_conditionvariable + ') == ' +  statements_condition + ' ) { <div style="padding-left:20px"><br> ' + statements_action + '<br></div>}  </code>' ;
+    var code = ' <br> <code class="repeticao" > do  { <div style="padding-left:20px"><br> ' + statements_action + '<br></div>} while( digitalRead(' + value_conditionvariable + ') == ' +  statements_condition + ' ); </code>' ;
   }
 
   else{
     value_conditionvariable = '<code class="variavel">' + value_conditionvariable + '</code>'
-    var code = ' <br> <code class="repeticao" > while( analogRead(' + value_conditionvariable + ') ' +  statements_condition + ' ) { <div style="padding-left:20px"><br> ' + statements_action + '<br></div>}  </code>' ;
+    var code = ' <br> <code class="repeticao" > do  { <div style="padding-left:20px"><br> ' + statements_action + '<br></div>} while( analogRead(' + value_conditionvariable + ') ' +  statements_condition + ' ); </code>' ;
   }
 
   return code;

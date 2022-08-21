@@ -9,7 +9,7 @@
   let currentButton;
   let warning
 
-  function handlePlay(event) {
+  function handlePlay() {
 
     let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     
@@ -56,24 +56,21 @@
   }
 
 
-  let workspace
+   let workspace
   function onChangeLoadCode() {
     if (Blockly.getMainWorkspace() != undefined && workspace != '') {
-      workspace = Blockly.getMainWorkspace();
+       workspace = Blockly.getMainWorkspace();
       workspace.addChangeListener(handlePlay);
-    }
-    let div = document.getElementsByClassName('variavel')
-    for (let i = 0; i < div.length; i++) {
-      console.log(div[i])
-    }
-    console.log(div)
-    
+    } 
     clearInterval(interval)
     
   }
+  let interval = setInterval(onChangeLoadCode, 1000)
+
+
+
 
   enableEditMode();
-  let interval = setInterval(onChangeLoadCode, 1000)
 
 
   const toolbox = {

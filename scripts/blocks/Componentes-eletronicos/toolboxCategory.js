@@ -21,10 +21,6 @@ let componentesEletronicos = {
         },
         {
           "kind": "block",
-          "type": "sensorultrassonico"
-        },
-        {
-          "kind": "block",
           "type": "sensorindutivo"
         },
         {

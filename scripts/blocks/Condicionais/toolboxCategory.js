@@ -11,7 +11,6 @@ let condicionais = {
       "kind": "block",
       "type": "ifelse"
     }
-
   ]
 }
 

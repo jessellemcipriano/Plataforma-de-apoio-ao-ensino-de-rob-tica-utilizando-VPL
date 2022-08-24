@@ -7,4 +7,4 @@ pages:
       paths:
          - public
    only:
-      - tcc2-node
+      - master
